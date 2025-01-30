@@ -1,0 +1,29 @@
+// region Global functions declarations
+
+/**
+ *
+ * @param {number} $target
+ * @returns {number}
+ *
+ * @example
+ * vw(10);
+ */
+@function vw($target) {
+  @return 0.09259259259259259vh * $target;
+}
+
+// endregion
+
+// region Fonts and styles reset
+
+@import "reset";
+@import "fonts";
+
+// endregion
+
+// region Components & interfaces
+
+@import "components/index";
+@import "interfaces/index";
+
+// endregion

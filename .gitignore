@@ -1,0 +1,12 @@
+# ide files
+/.idea
+/.vscode
+
+# Temp files
+/node_modules
+
+# Build files
+/build
+
+# Project files
+package-lock.json
