@@ -10,14 +10,31 @@ import {
 } from "../utils/nui";
 
 import {
+  useDispatch,
   useSelector,
 } from "react-redux";
 
+import {
+  useNuiEvent,
+} from "../hooks/useNuiEvent";
+
+import {
+  mainActions,
+} from "../store/reducers/mainSlice";
+
 const Base = () => {
+  const dispatch = useDispatch();
   const {
     isVisible,
   } = useSelector(
     state => state.main,
+  );
+  useNuiEvent(
+    'setBaseVisible', (state) => {
+      dispatch(
+        mainActions.setIsVisible(state),
+      );
+    },
   );
   useEffect(
     () => {
