@@ -3,7 +3,7 @@ import {
 } from "redux";
 
 import mainReducer
-  from "./reducers/mainSlice"
+  from "./reducers/mainSlice";
 
 const rootReducer = combineReducers(
   {
