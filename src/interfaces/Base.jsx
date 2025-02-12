@@ -1,5 +1,5 @@
 import React, {
-  useEffect,
+  useCallback, useEffect,
 } from 'react';
 
 import Layout
@@ -10,9 +10,8 @@ import {
 } from "../utils/nui";
 
 import {
-  useDispatch,
-  useSelector,
-} from "react-redux";
+  useEscHook,
+} from "../hooks/useEscHook";
 
 import {
   useNuiEvent,
@@ -22,12 +21,26 @@ import {
   mainActions,
 } from "../store/reducers/mainSlice";
 
+import {
+  useDispatch, useSelector,
+} from "react-redux";
+
 const Base = () => {
   const dispatch = useDispatch();
   const {
     isVisible,
   } = useSelector(
     state => state.main,
+  );
+  const onCloseMenu = useCallback(
+    () => {
+      if (
+        !isVisible
+      ) {
+        return;
+      }
+      fetchNui('baseClose').then();
+    }, [isVisible],
   );
   useNuiEvent(
     'setBaseVisible', (state) => {
@@ -39,11 +52,12 @@ const Base = () => {
   useEffect(
     () => {
       if (isVisible) {
-        fetchNui(
-          'baseReady',
-        ).then();
+        fetchNui('baseReady').then();
       }
     }, [isVisible],
+  );
+  useEscHook(
+    onCloseMenu, [onCloseMenu],
   );
   if (
     !isVisible
