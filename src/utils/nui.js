@@ -9,8 +9,10 @@ export async function fetchNui(eventName, data = {}) {
   if(typeof GetParentResourceName === "undefined") {
     console.log(
       `Event: ${eventName},\n` +
-      `Data: ${JSON.stringify(data, null, 2)},\n` +
       `Error: Response unhandled`
+    );
+    console.log(
+      data,
     );
     return null;
   }
