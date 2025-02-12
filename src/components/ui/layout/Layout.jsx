@@ -26,9 +26,11 @@ const Layout = (
       }
       return classes.join(" ");
     }, [containerName],
-  )
+  );
   return (
-    <div className={getClassNames()} style={getStyles()} children={children}/>
+    <div
+      className={getClassNames()} style={getStyles()} children={children}
+    />
   );
 };
 
