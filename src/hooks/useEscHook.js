@@ -2,19 +2,13 @@ import {
   useCallback, useEffect,
 } from "react";
 
-export const useKeyHook = (
-  handler, dependencies = [], keyCodes = [],
+export const useEscHook = (
+  handler, dependencies = [],
 ) => {
   const keyDown = useCallback(
     (e) => {
-      if (
-        keyCodes.includes(
-          Number(
-            e.keyCode,
-          ),
-        )
-      ) {
-        handler(e);
+      if (e.keyCode === 77 || e.keyCode === 27) {
+        handler();
       }
     }, [handler],
   );

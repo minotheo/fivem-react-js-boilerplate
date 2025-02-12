@@ -33,14 +33,16 @@ export const useNuiEvent = (
       savedHandler.current = handler;
     }, [handler],
   );
-  useEffect(() => {
-    window.addEventListener(
-      "message", eventListener,
-    );
-    return () => {
-      window.removeEventListener(
+  useEffect(
+    () => {
+      window.addEventListener(
         "message", eventListener,
       );
-    }
-  }, [action, eventListener]);
+      return () => {
+        window.removeEventListener(
+          "message", eventListener,
+        );
+      }
+    }, [action, eventListener],
+  );
 };
