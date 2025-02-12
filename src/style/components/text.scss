@@ -31,37 +31,3 @@ p.gilroy {
 }
 
 // endregion
-
-// region Kallisto font styles
-
-h1.kallisto {
-  color: #FFFFFF;
-  font-size: vw(14);
-  font-weight: 400;
-  font-family: "kallisto", sans-serif;
-  &.px16 {
-    font-size: vw(16);
-  }
-  &.px20 {
-    font-weight: 700;
-    font-size: vw(20);
-  }
-  &.black {
-    color: #000000;
-  }
-}
-
-p.kallisto {
-  color: #FFFFFF;
-  font-size: vw(14);
-  font-weight: 400;
-  font-family: "kallisto", sans-serif;
-  &.px16 {
-    font-size: vw(16);
-  }
-  &.black {
-    color: #000000;
-  }
-}
-
-// endregion
