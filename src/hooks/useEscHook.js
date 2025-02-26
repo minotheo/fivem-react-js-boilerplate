@@ -3,7 +3,7 @@ import {
 } from "react";
 
 export const useEscHook = (
-  handler, dependencies = [],
+  handler,
 ) => {
   const keyDown = useCallback(
     (e) => {
@@ -22,6 +22,6 @@ export const useEscHook = (
           'keydown', keyDown,
         );
       };
-    }, [...dependencies, keyDown],
+    }, [handler, keyDown],
   );
 };

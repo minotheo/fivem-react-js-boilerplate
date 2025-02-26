@@ -57,7 +57,7 @@ const Base = () => {
     }, [isVisible],
   );
   useEscHook(
-    onCloseMenu, [onCloseMenu],
+    onCloseMenu,
   );
   if (
     !isVisible
