@@ -7,6 +7,3 @@
 
 # Build files
 /build
-
-# Project files
-package-lock.json
