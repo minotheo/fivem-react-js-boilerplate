@@ -1,0 +1,43 @@
+{
+  "parser": "babel-ts",
+  "semi": true,
+  "useTabs": true,
+  "tabWidth": 2,
+  "printWidth": 96,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "arrowParens": "always",
+  "proseWrap": "always",
+  "endOfLine": "auto",
+  "jsxSingleQuote": false,
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "options": {
+        "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+        "importOrder": [
+          "^(react/(.*)$)|^(react$)",
+          "<THIRD_PARTY_MODULES>",
+          "^@/",
+          "^@/(?!shared$)[a-zA-Z0-9_/]*$",
+          "^[./](?!src/types)[a-zA-Z0-9_/]*$",
+          "^@shared/",
+          "^./src/types"
+        ],
+        "importOrderCaseSensitive": true,
+        "importOrderParserPlugins": ["typescript", "jsx"]
+      }
+    },
+    {
+      "files": ["*.scss", "**/*.scss", "*.scss~", "**/*.scss~"],
+      "options": {
+        "parser": "scss",
+        "plugins": [],
+        "useTabs": false,
+        "tabWidth": 2
+      }
+    }
+  ]
+}
