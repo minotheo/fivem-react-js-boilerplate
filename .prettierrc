@@ -19,12 +19,7 @@
         "plugins": ["@ianvs/prettier-plugin-sort-imports"],
         "importOrder": [
           "^(react/(.*)$)|^(react$)",
-          "<THIRD_PARTY_MODULES>",
-          "^@/",
-          "^@/(?!shared$)[a-zA-Z0-9_/]*$",
-          "^[./](?!src/types)[a-zA-Z0-9_/]*$",
-          "^@shared/",
-          "^./src/types"
+          "<THIRD_PARTY_MODULES>"
         ],
         "importOrderCaseSensitive": true,
         "importOrderParserPlugins": ["typescript", "jsx"]
