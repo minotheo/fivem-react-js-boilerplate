@@ -16,3 +16,8 @@ export const useKeyHook = (handler, dependencies = [], keyCodes = []) => {
 		};
 	}, [...dependencies, keyDown]);
 };
+
+// just a shorthand for escape
+export const useEscapeHook = (handler) => {
+	useKeyHook(handler, [handler], [27, 77]);
+};

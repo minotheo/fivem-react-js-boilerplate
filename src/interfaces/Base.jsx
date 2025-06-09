@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect } from 'react';
 import Layout from '../components/ui/layout/Layout';
 import { fetchNui } from '../utils/nui';
-import { useEscHook } from '../hooks/useEscHook';
 import { useNuiEvent } from '../hooks/useNuiEvent';
 import { mainActions } from '../store/reducers/mainSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEscapeHook } from '../hooks/useKeyHook';
 
 const Base = () => {
 	const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const Base = () => {
 			fetchNui('baseReady').then();
 		}
 	}, [isVisible]);
-	useEscHook(onCloseMenu);
+	useEscapeHook(onCloseMenu);
 	if (!isVisible) {
 		return null;
 	}
