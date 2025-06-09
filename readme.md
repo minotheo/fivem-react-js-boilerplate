@@ -50,5 +50,3 @@ npm start
 ## 📣 Contributions
 
 Feel free to submit issues or pull requests to improve this boilerplate!
-
----
