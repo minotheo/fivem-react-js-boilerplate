@@ -7,6 +7,8 @@ for this simple boilerplate template.
 
 - [ ] Add multilanguage support
 - [ ] Add color & text styling
+- [ ] Add vite builder config
+- [ ] Create project environment ( development, production )
 
 ### In Progress
 
